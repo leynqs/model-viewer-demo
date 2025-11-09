@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Responsive 3D Avatar</title>
+    <title>3D Avatar</title>
 
     <!-- Load model-viewer -->
     <script
@@ -17,6 +17,7 @@
         padding: 0;
         height: 100%;
         width: 100%;
+        background: transparent; /* no background color */
         overflow: hidden;
         display: flex;
         align-items: center;
@@ -24,10 +25,11 @@
       }
 
       model-viewer {
-        /* Maintain a square shape that fits within viewport */
+        /* keep square, follow smaller viewport dimension */
         width: min(100vw, 100vh);
         height: min(100vw, 100vh);
         display: block;
+        background: transparent; /* ensure transparent canvas */
       }
     </style>
   </head>
@@ -36,11 +38,10 @@
     <model-viewer
       src="https://models.readyplayer.me/6910ce6448062250a482a8e9.glb"
       shadow-intensity="1"
-      auto-rotate
-      rotation-per-second="20deg"
       camera-controls
       touch-action="pan-y"
-      interaction-prompt="none">
+      interaction-prompt="none"
+      style="background-color: transparent;">
     </model-viewer>
   </body>
 </html>
