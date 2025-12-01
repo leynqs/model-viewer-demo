@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Coin – Upward Light</title>
+    <title>Coin</title>
 
     <script
       type="module"
@@ -15,12 +15,11 @@
         margin: 0;
         padding: 0;
         height: 100%;
-        background-color: #000; /* dark background for contrast */
+        background-color: #f5f5f5;
         display: flex;
         align-items: center;
         justify-content: center;
       }
-
       model-viewer {
         height: 90vh;
         width: 90vh;
@@ -33,22 +32,19 @@
       src="https://cdn.tinyglb.com/models/dab7f03a81d040b5be002050b7ff1ce5.glb"
       camera-controls
       auto-rotate
-      rotation-per-second="30deg"
+      rotation-per-second="20deg"
       disable-zoom
       environment-image="neutral"
-      exposure="1.1"
+      exposure="1.4"
       shadow-intensity="1.2"
-      shadow-softness="0.7"
+      shadow-softness="0.5"
       interaction-prompt="none">
 
-      <!-- Upward floor light -->
-      <directional-light intensity="2.5" color="#fff8e1" direction="0 1 0"></directional-light>
+      <!-- Bright frontal key light -->
+      <directional-light intensity="2.5" color="#ffffff" direction="0.5 1 1"></directional-light>
 
-      <!-- Subtle blue rim light for edge definition -->
-      <directional-light intensity="1.2" color="#80caff" direction="0.5 0.5 -1"></directional-light>
-
-      <!-- Gentle overhead light for balance -->
-      <directional-light intensity="0.8" color="#ffe0b0" direction="0 -1 0"></directional-light>
+      <!-- Fill light -->
+      <directional-light intensity="1.0" color="#ffdca8" direction="-1 0.5 0.5"></directional-light>
 
     </model-viewer>
   </body>
